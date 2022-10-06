@@ -2,22 +2,25 @@ import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "./Pricechart.css";
 
-
 function Pricechart({ data, setPriceAndTime }) {
   const [chartData, setChartData] = useState([]);
   const options = {
     events: ["mousemove"],
     onHover: (e, chart) => {
       setPriceAndTime({
-        price: chartData[chart[0]._index].y, 
-        time: chartData[chart[0]._index].x
-      })
-    },  
+        price: chartData[chart[0]._index].y,
+        time: chartData[chart[0]._index].x,
+      });
+    },
+    animation: {
+      duration: 100,      
+    },
     legend: {
       display: false,
     },
     hover: {
       intersect: false,
+      mode: "index",
     },
     elements: {
       line: {
@@ -31,6 +34,7 @@ function Pricechart({ data, setPriceAndTime }) {
     tooltips: {
       mode: "index",
       intersect: false,
+      enabled: false,
     },
     scales: {
       xAxes: [
@@ -84,7 +88,7 @@ function Pricechart({ data, setPriceAndTime }) {
                 type: "line",
                 backgroundColor: "white",
                 borderColor: "#5AC53B",
-                borderWidth: 2,
+                borderWidth: 3,
                 pointBorderColor: "rgba(0, 0, 0, 0)",
                 pointBackgroundColor: "rgba(0, 0, 0, 0)",
                 pointHoverBackgroundColor: "#5AC53B",

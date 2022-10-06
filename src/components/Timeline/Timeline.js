@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Timeline.css";
 
 function TimeLine({ setSelection }) {
-  const [active, setActive] = useState();
+  const [active, setActive] = useState("All");
   const selectionToValueDict = {
     "1d": "1",
     "1w": "7",

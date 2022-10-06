@@ -18,6 +18,7 @@ function App() {
     fetchData();
   }, [selection]);
 
+ 
   return (
     <div className="App">
       <Header price={priceAndTime.price} symbol={"Ethereum"} time={priceAndTime.time}/>
