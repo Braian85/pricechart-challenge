@@ -1,0 +1,12 @@
+.header__container {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.header__items {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
