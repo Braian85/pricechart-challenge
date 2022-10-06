@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { getData } from "./service/coingeckoAPI";
 import Pricechart from "./components/Pricechart/Pricechart";
-import Timeline from "./components/Timeline/Timeline";
+import Linechart from "./components/Timeline/Timeline";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -21,9 +21,10 @@ function App() {
  
   return (
     <div className="App">
+      <h1>PRICECHART CHALLENGE</h1>
       <Header price={priceAndTime.price} symbol={"Ethereum"} time={priceAndTime.time}/>
       {data && <Pricechart data={data} setPriceAndTime={setPriceAndTime} />}
-      <Timeline setSelection={setSelection}/>
+      <Linechart setSelection={setSelection}/>
     </div>
   );
 }
